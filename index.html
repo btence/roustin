@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+        <title>ROUSTIN</title>
+        <meta charset="UTF-8" http-equiv="content-type">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        
+    <body style="background-color:#111111;">
+        
+        <center>
+            <h4 style="color:#80FF00; font-family:monospace">ACCOUNT:1842 AG:1749 N:17328*</h4>
+        </center>
+        
+        <center>
+            <h4 style="color:#FF0900; font-family:monospace">ANONYMOUS IDENTIFICATION</h4>
+        </center>
+        
+        <center>
+            <a id="USD" title="Cotação do Dólar Americano Hoje" name="mercado_cotacao">Dólar Hoje</a><script async src="https://mercadocotacao.com/money/mercadocotacao.js"></script>
+        </center>
+        
+        <hr></hr>
+        
+        <center>
+            <h5 style="color:#80FF00; font-family:monospace">SERVER ACTIVATE: BR-184#1</h5>
+        </center>
+        
+        <hr></hr>
+        
+        <center>
+            <h4 style="color:#FFFFFF">MOVIMENTOS NA CONTA</h4>
+        </center>
+        
+        <center>
+           <iframe id="saldocb" width="100%" height="346" frameborder="0" class="dd1" scrolling="no" src="https://onedrive.live.com/embed?resid=DDAA90A622B9C16E%21107&authkey=%21AMW2607U00Whoy0&em=2&wdAllowInteractivity=False&wdInConfigurator=True"></iframe>
+        </center>
+        
+        <p></p>
+        
+        <center>
+        <input type="button"
+        
+           id="saldodd" 
+            class="saldodd"
+           value="ATUALIZAR DADOS" /> 
+           
+        <script> 
+        function reload() { 
+            document.getElementById('saldocb').src += ''; 
+        } 
+        saldodd.onclick = reload; 
+        </script> 
+        </center>
+        
+        <p></p>
+        
+        <center>
+            <iframe id="ghost" width="100%" height="546" frameborder="0" scrolling="no" class="ghost" src="https://ghostbin.co/"></iframe>
+        </center>
+    
+    	<style>
+		.dd1 {
+		border-radius: 10px;
+		border: 2px solid #80FF00;
+		}
+        </style>
+        
+    	<style>
+		.saldodd {
+		border-radius: 10px;
+		border: 2px solid #80FF00;
+		}
+        </style>
+        
+    	<style>
+		.ghost {
+		border-radius: 10px;
+		border: 2px solid #80FF00;
+		}
+        </style>
+        
+
+       
+    </body>
+    </html>
