@@ -67,8 +67,15 @@
         </center>
         
         <center>
-            <iframe src="table.html" style="background-color:#ffffff" height="160" width="100%"></iframe>
+            <iframe src="table.html" class="testy" style="background-color:#ffffff" height="160" width="100%"></iframe>
         </center>
+        
+         <script> 
+            function reload() { 
+            document.getElementById('testy').src += ''; 
+            } 
+            btnccsv.onclick = reload; 
+        </script> 
         
         <!---CONNECTION SERVER DATA CENTER--->
         <script>
