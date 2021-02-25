@@ -17,5 +17,11 @@
 		}
 		
 		.info-1{
-		font-family: mo;
+		font-family: monospace;
+		align-content: left;
+		}
+
+		.info-2{
+		font-family: monospace;
+		align-content: left;
 		}
