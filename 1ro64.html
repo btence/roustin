@@ -1,55 +1,118 @@
 <!DOCTYPE html>
     <html lang="en">
         <head>
+        <title>ROUSTIN</title>
         <meta charset="UTF-8" http-equiv="content-type" content="txt/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="refresh" content="1; url=https://btence.github.io/ro64-table/">
         </head>
         
-    <body>
+    <body style="background-color:#111111;">
+       
+        <center>
+            <h3 style="color:#ffffff; font-family:monospace;">SERVER ONLINE</h3>
+        </center>
         
-        <h3 class="title">RO64| System Informations</h3>
+        <table id="freq" align="left" border="1" style="color:#ffffff; font-family:arial;">
+                <tr>
+                    <td>AREA</td>
+                    <td>PINGFX</td>
+                    <td>ID</td>
+                </tr>
+                
+                <tr>
+                    <td>USA</td>
+                    <td>372ms</td>
+                    <td>#273</td>
+                </tr>
+                
+                <tr>
+                    <td>BRA</td>
+                    <td>824ms</td>
+                    <td>#823</td>
+                </tr>
+                
+                <tr>
+                    <td>FRA</td>
+                    <td>384ms</td>
+                    <td>#723</td>
+                </tr>
+        </table>
         
-        <hr class="line-1"/>
+        <form align="right" class="form-inline">
+            <div class="form-group">
+                <label style="color:#ffffff" for="initial"><font face="arial">IN</font></label>
+                <input type="number" class="form-control" id="initial" placeholder="RO64 INITIAL NUMBER">
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label style="color:#ffffff" for="final"><font face="arial">FN</font></label>
+                <input type="number" class="form-control" id="final" placeholder="RO64 FINAL NUMBER">
+            </div>
+            
+            <p></p>
+            
+            <button type="button" class="btn-default" onclick="gerarNumeros()">Generate DC-72 Results</button>
+        </form>
+
+        <style>
+    		.form-control{
+    		border-radius: 5px;
+    		border: 2px solid #000000;
+    		background: #FFFFFF;
+    		}
+    		
+    		.btn-default{
+    		border-radius: 5px;
+    		border: 2px solid #FFFFFF;
+    		}
+        </style>
+
+        <div id="result"></div>
+
+        <script>
+            function randomNumber(min, max) {
+        	return Math.floor( ((max + 1) - min) * Math.random() + min);
+            }
         
-        <h4 class="up-1">UPDATE: 26/02/2021</h4>
+            function gerarNumeros() {
         
+            var txtInitial = document.getElementById('initial'),
+          	txtFinal = document.getElementById('final'),
+            result = document.getElementById('result');
+            
+            var numberInitial = parseInt(txtInitial.value),
+          	numberFinal = parseInt(txtFinal.value);
+          
+            var count = 1;
+          
+            var interval = setInterval(function() {
         
-        <div class="configtxt-1">
-        <h5 class="info-2">SYSTEM: <span style="color:#80FF00">●</span> ONLINE</h4>
-        <h5 class="info-3">DIRECTION GLOBAL: United States Of America</h4>
-        <h5 class="info-4"></h5>
-        </div>
+            //Generate 20 numbers per second.
+            for (var i = 0; i < 1/*20000*/; i++) {
+              
+              var numberGerado = randomNumber(numberInitial, numberFinal);
+            result.innerHTML = result.innerHTML + '<p id="prost" align="center" style="color:#ffffff">' + count + ' : ' + numberGerado + '</p>';
+              
+              count++;
+              
+            }
+            
+            if (count === 6) {//Stop generating when you reach that number.
+             clearInterval(interval);
+            }
         
+            }, 350);//Generate in 1 in 1 second.
         
-        <h5 class="lineq-1">----------------------</h5>
+            }
+        </script>
         
-        
-        <div class="configtxt-2">
-        <h5 class="info-5">RESULT NVT: 10018—NEGATIVE</h5>
-        <h5 class="info-6">NEXT TXY: ERROR_DATA</h5>
-        <h5 class="info-7">NEXT LTY: ERROR_DATA</h5>
-        <h5 class="info-8">NEXT POS: ERROR_DATA</h5>
-        <h5 class="info-9">NEXT VLX: ERROR_DATA</h5>
-	<h5 class="info-10">NEXT V60: ERROR_DATA</h5>
-        </div>
-        
-        <h5 class="lineq-2">----------------------</h5>
-        
-        <div class="infox">
-        <h5>©ROUSTIN 2020-2021</h5>
-        </div>
-        
-        <style type="text/css">
-		.title{font-family: monospace; text-align: left;}
-		.line-1{background: #000000; height: 8px;}
-		.configtxt-1{ line-height: 5px; font-family: monospace; text-align: left}
-		.up-1{font-family: monospace; text-align: right;}
-		.lineq-1{text-align: center;}
-		.lineq-2{text-align: center;}
-		.configtxt-2{ line-height: 5px; font-family: monospace; text-align: left}
-		.infox{line-height: 5px; font-family: monospace; text-align: center;}
-		</style>
-		
+        <!---CONNECTION SERVER DATA CENTER--->
+        <script>
+            #!bash/bin
+            
+            ssh -X <private_info>@<host>
+        </script>
+        <!---CONNECTION SERVER DATA CENTER--->
+
     </body>
     </html>
